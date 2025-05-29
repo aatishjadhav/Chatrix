@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Chat App</h1>
+      <h1>Chatrix</h1>
       {!user ? (
         <div className="container mt-5 text-center">
           <div className="row">
