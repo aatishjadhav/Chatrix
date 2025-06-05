@@ -4,7 +4,7 @@ import axios from "axios";
 import MessageList from "./MessageList";
 import "./chat.css";
 
-const socket = io("https://chat-app-backend-psi-nine.vercel.app");
+const socket = io("https://chat-app-backend-l81j.onrender.com");
 
 export const Chat = ({ user }) => {
   const [users, setUsers] = useState([]);
@@ -16,7 +16,7 @@ export const Chat = ({ user }) => {
     // Fetch all users excluding the current user
     const fetchUsers = async () => {
       try {
-        const { data } = await axios.get("https://chat-app-backend-psi-nine.vercel.app/users", {
+        const { data } = await axios.get("https://chat-app-backend-l81j.onrender.com/users", {
           params: { currentUser: user.username },
         });
         setUsers(data);
@@ -41,7 +41,7 @@ export const Chat = ({ user }) => {
 
   const fetchMessages = async (receiver) => {
     try {
-      const { data } = await axios.get("https://chat-app-backend-psi-nine.vercel.app/messages", {
+      const { data } = await axios.get("https://chat-app-backend-l81j.onrender.com/messages", {
         params: { sender: user.username, receiver },
       });
       setMessages(data);
